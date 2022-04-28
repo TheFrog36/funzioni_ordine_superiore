@@ -112,7 +112,7 @@ function lessThan6(word){
      return word.length < 6;
 }
 console.log('parole più corte di sei', testArray5.filter(lessThan6));
-console.log('parole più corte di sei (lambda function)', testArray5.filter((word)=> word.length < 6))
+console.log('parole più corte di sei (lambda function)', testArray5.filter((word) => word.length < 6))
 
 
 /// filtrare testArray5 in modo che rimangono solo le stringhe che contengono la lettera 'n'
@@ -147,13 +147,15 @@ console.log("radice quadrata dei valori dell'array", testArray4.map(sqrt_value))
 console.log("radice quadrata dei valori dell'array (lambda function)", testArray4.map((number) => Math.sqrt(number)));
 
 
-/// mappare testArray4 sommando uno solo ai numeri dispari
+/// mappare testArray4 sommando uno solo ai numeri dispari  
 function add_1_to_odd(number){
     return number + (number % 2)**2;
 }
-console.log(testArray4)
+console.log('testArray4 normale', testArray4)
 console.log('aggiungo  1 ai numeri dispari', testArray4.map(add_1_to_odd));
-console.log('aggiungo  1 ai numeri dispari (lambda function)', testArray4.map((number) => number + (number % 2)**2));
+console.log('aggiungo  1 ai numeri dispari (lambda function)', testArray4.map((e) => e + (e % 2) ** 2));
+//operatore ternario = condizione ? condizione = true : condizione = false
+console.log('aggiungo  1 ai numeri dispari, operatore ternario', testArray4.map((e) => e % 2 ===0 ? e : e + 1));
 
 
 /// mappare testArray5 rendendo maiuscole la prima e l'ultima lettera di ogni parola
