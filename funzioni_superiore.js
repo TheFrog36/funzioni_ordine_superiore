@@ -172,3 +172,78 @@ function add_word_length(word){
 }
 console.log('aggiungo la lunghezza della parola alla fine ', testArray5.map(add_word_length));
 console.log('aggiungo la lunghezza della parola alla fine (lambda function)', testArray5.map((word) => word + " " + word.length));
+
+
+//filtrare tutti gli elementi di testArray che hanno indice pari
+function even_index(element, index){
+    return index % 2 === 0;
+}
+console.log('solo elementi con indice pari', testArray4.filter(even_index));
+console.log('solo elementi con indice pari (lambda function)', testArray4.filter((e,i) => i % 2 === 0));
+
+//mappare testArray4 in modo che ad ogni elemento venga sommato (se esiste) il successivo
+function add_next_in_line(element, index, array){
+    if(index < array.length-1){
+        return element + array[index + 1];
+    } else { 
+        return element;
+    }
+}
+ 
+console.log("sommo l'elemento al successivo", testArray4.map(add_next_in_line));
+console.log("sommo l'elemento al successivo (lambda function)", testArray4.map((e,i,a) => i < a.length - 1 ? e + a[i + 1] : e ));
+
+// reducing
+
+function sum_all(array){
+    let result = 0;
+    for(let i = 0; i < array.length; i++){
+        result += array[i];
+    }
+    return result;
+}
+console.log(sum_all(testArray4));
+
+function multiply_all(array){
+    let result = 1;
+    for(let i = 0; i < array.length; i++){
+        result *= array[i];
+    }
+    return result;
+}
+console.log('moltiplica tutti', multiply_all(testArray4));
+
+function reducer_sum_all(previous, current){
+    return previous + current;
+}
+console.log('somma tutti con reduce', testArray4.reduce(reducer_sum_all, 0)) //posso anche evitare di mettere 0, prenderà come prev [0] e current [1]
+console.log('somma tutti lambda function', testArray4.reduce((p,c) => p + c))
+console.log('moltiplica tutti lambda function', testArray4.reduce((p,c) => p*c))
+
+function reduce_higher_than_2(previous, current){
+    if(current > 2) previous.push(current);
+    return previous
+}
+//Come usare il reduce come un filter
+console.log('filtra maggiore di 2', testArray4.reduce(reduce_higher_than_2,[]))
+
+
+function reduce_sum_even_index(previous, current, index){
+    if(index % 2 === 0) return previous + current;
+    else return previous;
+}
+console.log('sommare indici pari con reduce', testArray4.reduce(reduce_sum_even_index))
+
+console.log('somma indice pare con reduce lambda function', testArray4.reduce((p,c,i) => i % 2 === 0 ? p + c : p ))
+
+
+
+
+
+
+
+
+
+
+
+
