@@ -88,7 +88,7 @@ function isPositive(numero){
     return numero >= 0;
 }
 console.log('numeri positivi', testArray4.filter(isPositive));
-console.log('numeri positivi (lamda function)', testArray4.filter((numero) => numero >= 0));
+console.log('numeri positivi (lambda function)', testArray4.filter((numero) => numero >= 0));
 
 
 /// filtrare testArray4 in modo che rimangono solo i numeri divisibili per 3
@@ -96,7 +96,7 @@ function isDivisible3(numero){
     return numero % 3 === 0;
 }
 console.log('numeri divisibili per 3', testArray4.filter(isDivisible3));
-console.log('numeri dvibili per 3 (lamda function)', testArray4.filter((numero) => numero % 3 ===0));
+console.log('numeri dvibili per 3 (lambda function)', testArray4.filter((numero) => numero % 3 ===0));
 
 
 /// filtrare testArray4 in modo che rimangono solo i numeri divisibili per 3 e 4
@@ -112,7 +112,7 @@ function lessThan6(word){
      return word.length < 6;
 }
 console.log('parole più corte di sei', testArray5.filter(lessThan6));
-console.log('parole più corte di sei (lamda function)', testArray5.filter((word)=> word.length < 6))
+console.log('parole più corte di sei (lambda function)', testArray5.filter((word)=> word.length < 6))
 
 
 /// filtrare testArray5 in modo che rimangono solo le stringhe che contengono la lettera 'n'
@@ -128,7 +128,7 @@ function is_number(something){
     return typeof(something) === 'number';
 }
 console.log('trova numeri', testArray6.filter(is_number));
-console.log('trova numeri (lamda function)',testArray6.filter((value) => typeof(something) === 'number'));
+console.log('trova numeri (lambda function)',testArray6.filter((value) => typeof(something) === 'number'));
 
 
 /// mappare testArrays4 dividendo tutti i numeri per 3
